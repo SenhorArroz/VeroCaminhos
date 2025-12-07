@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2668c66e6afc7d41bd8eb038b295733, type: 3}
+  m_Name: Feijao
+  m_EditorClassIdentifier: 
+  plantName: "Feij\xE3o verde"
+  seedSprite: {fileID: 14326738310124045, guid: c090bb8e6d55cde45b4a5fdfaac2678c, type: 3}
+  growthSprites:
+  - {fileID: -5677672124727554088, guid: 2f4ab4d164f45ad4dadfb9d53cb173af, type: 3}
+  - {fileID: -8036570137516496569, guid: c29083bf91bfd504da91bceec608586e, type: 3}
+  - {fileID: -2816655024938836795, guid: af91ec2062751054cad9ccb69ab2a7a6, type: 3}
+  timePerStage: 2
+  needsWaterEachDay: 1
+  value: 20
+  sellValue: 30
