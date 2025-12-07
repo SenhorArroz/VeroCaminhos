@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 309794361}
   - component: {fileID: 309794360}
   - component: {fileID: 309794359}
-  - component: {fileID: 309794358}
+  - component: {fileID: 309794362}
   m_Layer: 0
   m_Name: Triangle
   m_TagString: Untagged
@@ -354,25 +354,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &309794358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309794357}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0565ae7108f3a2547931e7cd0e64dcb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerOnEnter: 0
-  requireInput: 1
-  triggerOnceForever: 0
-  interactAction: {fileID: 1781555164194001046, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  onTrigger:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &309794359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -489,6 +470,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309794362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309794357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d7c108df76871846b88310502ca53db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTag: Player
+  acionarApenasUmaVez: 0
+  desativarAoAtivar: 1
+  aoInteragir:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1599160886}
+        m_TargetAssemblyTypeName: UI_Text, Assembly-CSharp
+        m_MethodName: SetTextPlanta
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 95f07fa2df487da40b231b655f984e11, type: 2}
+          m_ObjectArgumentAssemblyTypeName: PlantData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1599160886}
+        m_TargetAssemblyTypeName: UI_Text, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &333743911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1599160883
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1243,6 +1266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08abbda4301cd514a819140606ef73ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textComponent: {fileID: 1927074990}
 --- !u!1 &1639586168
 GameObject:
   m_ObjectHideFlags: 0
