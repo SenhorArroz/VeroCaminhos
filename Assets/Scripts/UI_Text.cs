@@ -5,6 +5,8 @@ public class UI_Text : MonoBehaviour
     private static UI_Text instance;
     [SerializeField]
     private TMPro.TextMeshProUGUI textComponent;
+
+    public GameObject sim;
     private void Awake()
     {
         if (instance == null)
@@ -14,6 +16,13 @@ public class UI_Text : MonoBehaviour
         else
         {
             Destroy(gameObject);
+        }
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetInactive();
         }
     }
     public void SetText(string text)
@@ -31,10 +40,10 @@ public class UI_Text : MonoBehaviour
     }
     public void SetActive()
     {
-        this.gameObject.SetActive(true);
+        sim.gameObject.SetActive(true);
     }
     public void SetInactive()
     {
-        this.gameObject.SetActive(false);
+        sim.gameObject.SetActive(false);
     }
 }
