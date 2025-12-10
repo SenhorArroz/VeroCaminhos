@@ -6,6 +6,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movimentação")]
     public float moveSpeed = 4f;
 
+    public bool canMove = false;
+
+    public static PlayerMovement instance;
+
     private Rigidbody2D rb;
     private Vector2 input;
 
@@ -14,6 +18,15 @@ public class PlayerMovement : MonoBehaviour
 
     void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         rb = GetComponent<Rigidbody2D>();
 
         // cria o mapa de ações
@@ -40,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
     // recebe input do Input System
     private void OnMove(InputAction.CallbackContext ctx)
     {
+        if (!canMove) return;
         input = ctx.ReadValue<Vector2>().normalized;
     }
 

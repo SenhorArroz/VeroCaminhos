@@ -41,9 +41,11 @@ public class UI_Text : MonoBehaviour
     public void SetActive()
     {
         sim.gameObject.SetActive(true);
+        PlayerMovement.instance.canMove = false;
     }
     public void SetInactive()
     {
         sim.gameObject.SetActive(false);
+        PlayerMovement.instance.canMove = true;
     }
 }
