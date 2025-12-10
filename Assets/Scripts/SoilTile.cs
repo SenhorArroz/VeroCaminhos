@@ -156,7 +156,7 @@ public class SoilTile : MonoBehaviour
     {
         if (CanHarvest())
         {
-            player.GiveMoney(plant.value);
+            player.GiveMoney((int)plant.value);
             ResetTile();
         }
     }

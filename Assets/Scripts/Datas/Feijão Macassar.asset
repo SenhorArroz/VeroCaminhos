@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2668c66e6afc7d41bd8eb038b295733, type: 3}
+  m_Name: "Feij\xE3o Macassar"
+  m_EditorClassIdentifier: 
+  plantName: "Feij\xE3o Macassar"
+  description: "Uma trepadeira baixa de folhas verde-claras e vagens finas. \xC9
+    plantado jogando os gr\xE3os diretamente na terra fofa, geralmente ao lado do
+    milho no cons\xF3rcio tradicional do Nordeste. O calor do RN ajuda muito, e ele
+    se vira bem na seca \u2014 desde que receba pelo menos umidade inicial. Em solos
+    pedregosos do sert\xE3o ele cresce devagar, mas cresce. Quanto mais quente, mais
+    r\xE1pido floresce."
+  seedSprite: {fileID: 0}
+  growthSprites: []
+  timePerStage: 70
+  needsWaterEachDay: 1
+  value: 0.4
+  sellValue: 8

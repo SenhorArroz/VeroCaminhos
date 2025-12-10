@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2668c66e6afc7d41bd8eb038b295733, type: 3}
+  m_Name: Caju
+  m_EditorClassIdentifier: 
+  plantName: Caju
+  description: "Uma \xE1rvore de porte m\xE9dio, copa larga e frutos coloridos com
+    cheiro doce. O verdadeiro tesouro \xE9 a castanha que cresce na ponta. \xC9 plantado
+    com mudas em covas fundas, e gosta de espa\xE7os amplos. O clima semi\xE1rido
+    do RN \xE9 um para\xEDso para o cajueiro: muito sol, pouca chuva, e solo arenoso
+    do litoral. Nas regi\xF5es de dunas ele cresce como se fosse nativo \u2014 porque
+    realmente \xE9."
+  seedSprite: {fileID: 0}
+  growthSprites: []
+  timePerStage: 160
+  needsWaterEachDay: 0
+  value: 1.5
+  sellValue: 10

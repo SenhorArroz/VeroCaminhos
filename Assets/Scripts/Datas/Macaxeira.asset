@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2668c66e6afc7d41bd8eb038b295733, type: 3}
+  m_Name: Macaxeira
+  m_EditorClassIdentifier: 
+  plantName: Macaxeira (Aipim / Mandioca)
+  description: "Planta de caule grosso e folhas palminhadas. As ra\xEDzes brancas
+    e compridas s\xE3o a parte comest\xEDvel. \xC9 plantada com peda\xE7os do pr\xF3prio
+    caule, chamados \"manivas\", enterrados na diagonal. A mandioca se d\xE1 perfeitamente
+    na Caatinga \u2014 calor e pouca \xE1gua s\xE3o o habitat ideal. Em solos duros
+    do sert\xE3o, cresce forte. Onde a chuva \xE9 pouca, ela produz at\xE9 mais,
+    porque concentra energia nas ra\xEDzes."
+  seedSprite: {fileID: 0}
+  growthSprites: []
+  timePerStage: 150
+  needsWaterEachDay: 0
+  value: 0.8
+  sellValue: 4.5

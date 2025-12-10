@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2668c66e6afc7d41bd8eb038b295733, type: 3}
+  m_Name: Milho
+  m_EditorClassIdentifier: 
+  plantName: Milho
+  description: "Planta s\xEDmbolo do RN, base do cuscuz e das festas juninas. Seus
+    p\xE9s s\xE3o altos, de folhas longas e verdes, com espigas protegidas por palha.
+    \xC9 plantado colocando dois ou tr\xEAs gr\xE3os em pequenos buracos no solo,
+    com espa\xE7amento regular. O milho gosta de sol forte e se d\xE1 muito bem no
+    clima quente do agreste. Quando a chuva falha, o milho sofre \u2014 mas em solos
+    arenosos do litoral ele cresce r\xE1pido, desde que receba \xE1gua constante."
+  seedSprite: {fileID: 0}
+  growthSprites: []
+  timePerStage: 90
+  needsWaterEachDay: 1
+  value: 0.4
+  sellValue: 5
