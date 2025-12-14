@@ -1,62 +1,83 @@
-Ôªøusing UnityEngine;
+using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public class InteractTrigger : MonoBehaviour
+[RequireComponent(typeof(Collider))] // Garante que o objeto tenha um Collider
+public class TriggerInteract : MonoBehaviour
 {
-    public bool ativarSomenteUmaVez = false;
-    public bool ativarPorEntrada = false;
+    [Header("ConfiguraÁıes")]
+    [Tooltip("Tag do objeto que vai ativar o trigger (ex: Player)")]
+    [SerializeField] private string playerTag = "Player";
 
-    public UnityEvent onInteract;
+    [Tooltip("Se marcado, a interaÁ„o sÛ funciona uma ˙nica vez.")]
+    [SerializeField] private bool acionarApenasUmaVez = false;
 
-    private bool playerDentro = false;
-    private bool jaAtivado = false;
+    [Tooltip("Se marcado, o objeto se desativa apÛs a interaÁ„o.")]
+    [SerializeField] private bool desativarAoAtivar = false;
 
-    private InputSystem_Actions input;
-    private InputAction botaoInteract;
+    [Header("Eventos")]
+    public UnityEvent aoInteragir;
+
+    // Vari·veis Internas
+    private InputSystem_Actions _controls; // Classe gerada pelo Input System
+    private bool _jogadorNoTrigger = false;
+    private bool _jaFoiAcionado = false;
 
     private void Awake()
     {
-        input = new InputSystem_Actions();
-        input.Enable(); // ‚Üê necess√°rio para evitar input mudo
-        botaoInteract = input.Player.Interact;
+        _controls = new InputSystem_Actions();
     }
 
     private void OnEnable()
     {
-        botaoInteract.started += Interagir;
+        _controls.Player.Enable();
+        _controls.Player.Interact.performed += OnInteractPerformed;
     }
 
     private void OnDisable()
     {
-        botaoInteract.started -= Interagir;
+        _controls.Player.Interact.performed -= OnInteractPerformed;
+        _controls.Player.Disable();
     }
 
-    private void Interagir(InputAction.CallbackContext ctx)
+    // Chamado quando o bot„o È apertado
+    private void OnInteractPerformed(InputAction.CallbackContext context)
     {
-        if (!playerDentro) return;
+        // 1. Verifica se o jogador est· dentro da ·rea
+        if (!_jogadorNoTrigger) return;
 
-        if (ativarSomenteUmaVez && jaAtivado)
-            return;
+        // 2. Verifica se È para acionar apenas uma vez e se j· foi feito
+        if (acionarApenasUmaVez && _jaFoiAcionado) return;
 
-        onInteract?.Invoke();
-        jaAtivado = true;
+        // 3. Executa o evento
+        aoInteragir.Invoke();
+        Debug.Log("sim");
+        _jaFoiAcionado = true;
+
+        // 4. Desativa o objeto se necess·rio
+        if (desativarAoAtivar)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    // --- LÛgica do Trigger ---
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (!collision.CompareTag("Player")) return;
-
-        playerDentro = true;
-
-        if (ativarPorEntrada)
-            jaAtivado = false;
+        if (other.CompareTag(playerTag))
+        {
+            _jogadorNoTrigger = true;
+            // Opcional: Aqui vocÍ pode ativar uma UI (ex: "Aperte E")
+        }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (!collision.CompareTag("Player")) return;
-
-        playerDentro = false;
+        if (other.CompareTag(playerTag))
+        {
+            _jogadorNoTrigger = false;
+            // Opcional: Aqui vocÍ desativa a UI
+        }
     }
 }
